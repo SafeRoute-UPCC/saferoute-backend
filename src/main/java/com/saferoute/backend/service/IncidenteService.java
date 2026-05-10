@@ -40,7 +40,7 @@ public class IncidenteService {
     }
 
     public List<IncidenteResponse> listarPorUsuario(Integer idUsuario) {
-        return repository.findByUsuarioIdusuario(idUsuario).stream()
+        return repository.findByUsuarioIdUsuario(idUsuario).stream()
                 .map(this::toResponse)
                 .collect(Collectors.toList());
     }

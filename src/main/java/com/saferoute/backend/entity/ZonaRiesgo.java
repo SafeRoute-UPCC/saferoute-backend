@@ -21,6 +21,6 @@ public class ZonaRiesgo {
     private String descripcion;
 
     @ManyToOne
-    @JoinColumn(name = "id_ciudad")
+    @JoinColumn(name = "idCiudad")
     private Ciudad ciudad;
 }

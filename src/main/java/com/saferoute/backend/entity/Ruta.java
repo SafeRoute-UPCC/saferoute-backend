@@ -4,18 +4,20 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "configuracion_notificaciones")
+@Table(name = "ruta")
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor
-public class ConfiguracionNotificaciones {
+public class Ruta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idConfiguracion;
+    private Integer idRuta;
 
-    private Boolean alertasProximidad;
-    private Boolean notificacionesPush;
-    private Boolean sonidoAlerta;
+    private String origen;
+    private String destino;
+    private Double distancia;
+    private String duracionEstimada;
+    private String estadoSeguridad;
 
     @ManyToOne
     @JoinColumn(name = "idUsuario")

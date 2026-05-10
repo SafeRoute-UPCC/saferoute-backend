@@ -32,7 +32,8 @@ public class CiudadService {
     public CiudadResponse guardar(CiudadRequest req) {
         Ciudad c = new Ciudad();
         c.setNombre(req.getNombre());
-        c.setPais(req.getPais());
+        c.setDepartamento(req.getDepartamento());
+        c.setCodigoPostal(req.getCodigoPostal());
         return toResponse(repository.save(c));
     }
 
@@ -40,7 +41,8 @@ public class CiudadService {
         Ciudad c = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Ciudad no encontrada"));
         c.setNombre(req.getNombre());
-        c.setPais(req.getPais());
+        c.setDepartamento(req.getDepartamento());
+        c.setCodigoPostal(req.getCodigoPostal());
         return toResponse(repository.save(c));
     }
 
@@ -49,6 +51,11 @@ public class CiudadService {
     }
 
     private CiudadResponse toResponse(Ciudad c) {
-        return new CiudadResponse(c.getId(), c.getNombre(), c.getPais());
+        return new CiudadResponse(
+                c.getIdCiudad(),
+                c.getNombre(),
+                c.getDepartamento(),
+                c.getCodigoPostal()
+        );
     }
 }
