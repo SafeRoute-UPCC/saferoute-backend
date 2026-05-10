@@ -36,7 +36,7 @@ public class ConfiguracionNotificacionesService {
     }
 
     public ConfiguracionNotificacionesResponse buscarPorUsuario(Integer idUsuario) {
-        ConfiguracionNotificaciones c = repository.findByUsuarioId(idUsuario)
+        ConfiguracionNotificaciones c = repository.findByUsuarioIdusuario(idUsuario)
                 .orElseThrow(() -> new RuntimeException("Configuracion no encontrada"));
         return toResponse(c);
     }

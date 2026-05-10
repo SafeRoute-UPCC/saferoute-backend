@@ -28,7 +28,7 @@ public class AuthService {
     }
 
     public UsuarioResponse registrar(UsuarioRequest req) {
-        if (usuarioRepository.existsByCorreo(req.getEmail())) {
+        if (usuarioRepository.existsByEmail(req.getEmail())) {
             throw new RuntimeException("El correo ya está registrado");
         }
         Rol rol = rolRepository.findById(req.getIdRol())
@@ -50,7 +50,7 @@ public class AuthService {
     }
 
     public AuthResponse login(LoginRequest req) {
-        Usuario u = usuarioRepository.findByCorreo(req.getEmail())
+        Usuario u = usuarioRepository.findByEmail(req.getEmail())
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
 
         if (!passwordEncoder.matches(req.getContrasenia(), u.getContrasenia())) {
