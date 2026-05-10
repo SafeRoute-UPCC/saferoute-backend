@@ -1,5 +1,6 @@
 package com.saferoute.backend.entity;
 
+import com.saferoute.backend.entity.Usuario;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDate;

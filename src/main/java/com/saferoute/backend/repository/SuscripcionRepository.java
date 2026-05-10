@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface SuscripcionRepository extends JpaRepository<Suscripcion, Integer> {
-    List<Suscripcion> findByUsuarioId(Integer idUsuario);
+    List<Suscripcion> findByUsuarioIdusuario(Integer idUsuario);
 }

@@ -6,5 +6,5 @@ import java.util.Optional;
 
 public interface ConfiguracionNotificacionesRepository
         extends JpaRepository<ConfiguracionNotificaciones, Integer> {
-    Optional<ConfiguracionNotificaciones> findByUsuarioId(Integer idUsuario);
+    Optional<ConfiguracionNotificaciones> findByUsuarioIdusuario(Integer idusuario);
 }
