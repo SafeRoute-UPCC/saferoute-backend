@@ -72,7 +72,7 @@ public class ConfiguracionNotificacionesService {
         return new ConfiguracionNotificacionesResponse(
                 c.getId(), c.getRecibirCorreos(),
                 c.getRecibirAlertasWeb(), c.getNivelAlerta(),
-                c.getUsuario().getNombres()
+                c.getUsuario().getNombre()
         );
     }
 }
