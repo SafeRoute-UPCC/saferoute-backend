@@ -22,10 +22,10 @@ public class Incidente {
     private String ubicacion;
 
     @ManyToOne
-    @JoinColumn(name = "id_usuario")
+    @JoinColumn(name = "idUsuario")
     private Usuario usuario;
 
     @ManyToOne
-    @JoinColumn(name = "id_zona_riesgo")
+    @JoinColumn(name = "idZonaRiesgo")
     private ZonaRiesgo zonaRiesgo;
 }

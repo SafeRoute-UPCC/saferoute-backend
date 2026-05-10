@@ -36,7 +36,7 @@ public class ConfiguracionNotificacionesService {
     }
 
     public ConfiguracionNotificacionesResponse buscarPorUsuario(Integer idUsuario) {
-        ConfiguracionNotificaciones c = repository.findByUsuarioIdusuario(idUsuario)
+        ConfiguracionNotificaciones c = repository.findByUsuarioIdUsuario(idUsuario)
                 .orElseThrow(() -> new RuntimeException("Configuracion no encontrada"));
         return toResponse(c);
     }
@@ -46,9 +46,9 @@ public class ConfiguracionNotificacionesService {
         Usuario usuario = usuarioRepository.findById(req.getIdUsuario())
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
         ConfiguracionNotificaciones c = new ConfiguracionNotificaciones();
-        c.setRecibirCorreos(req.getRecibirCorreos());
-        c.setRecibirAlertasWeb(req.getRecibirAlertasWeb());
-        c.setNivelAlerta(req.getNivelAlerta());
+        c.setAlertasProximidad(req.getAlertasProximidad());
+        c.setNotificacionesPush(req.getNotificacionesPush());
+        c.setSonidoAlerta(req.getSonidoAlerta());
         c.setUsuario(usuario);
         return toResponse(repository.save(c));
     }
@@ -57,9 +57,9 @@ public class ConfiguracionNotificacionesService {
                                                           ConfiguracionNotificacionesRequest req) {
         ConfiguracionNotificaciones c = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Configuracion no encontrada"));
-        c.setRecibirCorreos(req.getRecibirCorreos());
-        c.setRecibirAlertasWeb(req.getRecibirAlertasWeb());
-        c.setNivelAlerta(req.getNivelAlerta());
+        c.setAlertasProximidad(req.getAlertasProximidad());
+        c.setNotificacionesPush(req.getNotificacionesPush());
+        c.setSonidoAlerta(req.getSonidoAlerta());
         return toResponse(repository.save(c));
     }
 
@@ -70,8 +70,10 @@ public class ConfiguracionNotificacionesService {
     private ConfiguracionNotificacionesResponse toResponse(
             ConfiguracionNotificaciones c) {
         return new ConfiguracionNotificacionesResponse(
-                c.getId(), c.getRecibirCorreos(),
-                c.getRecibirAlertasWeb(), c.getNivelAlerta(),
+                c.getIdConfiguracion(),
+                c.getAlertasProximidad(),
+                c.getNotificacionesPush(),
+                c.getSonidoAlerta(),
                 c.getUsuario().getNombre()
         );
     }

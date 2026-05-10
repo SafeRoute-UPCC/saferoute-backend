@@ -7,14 +7,14 @@ import lombok.*;
 @NoArgsConstructor @AllArgsConstructor
 public class ConfiguracionNotificacionesRequest {
 
-    @NotNull(message = "El campo recibirCorreos es obligatorio")
-    private Boolean recibirCorreos;
+    @NotNull(message = "El campo alertasProximidad es obligatorio")
+    private Boolean alertasProximidad;
 
-    @NotNull(message = "El campo recibirAlertasWeb es obligatorio")
-    private Boolean recibirAlertasWeb;
+    @NotNull(message = "El campo notificacionesPush es obligatorio")
+    private Boolean notificacionesPush;
 
-    @NotNull(message = "El nivel de alerta es obligatorio")
-    private String nivelAlerta;
+    @NotNull(message = "El campo sonidoAlerta es obligatorio")
+    private Boolean sonidoAlerta;
 
     @NotNull(message = "El usuario es obligatorio")
     private Integer idUsuario;

@@ -35,7 +35,7 @@ public class SuscripcionService {
     }
 
     public List<SuscripcionResponse> listarPorUsuario(Integer idUsuario) {
-        return repository.findByUsuarioIdusuario(idUsuario).stream()
+        return repository.findByUsuarioIdUsuario(idUsuario).stream()
                 .map(this::toResponse)
                 .collect(Collectors.toList());
     }

@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface IncidenteRepository extends JpaRepository<Incidente, Integer> {
-    List<Incidente> findByUsuarioIdusuario(Integer idusuario);
+    List<Incidente> findByUsuarioIdUsuario(Integer idUsuario);
     List<Incidente> findByZonaRiesgoId(Integer idZonaRiesgo);
 }

@@ -35,7 +35,7 @@ public class ZonaRiesgoService {
     }
 
     public List<ZonaRiesgoResponse> listarPorCiudad(Integer idCiudad) {
-        return repository.findByCiudadId(idCiudad).stream()
+        return repository.findByCiudadIdCiudad(idCiudad).stream()
                 .map(this::toResponse)
                 .collect(Collectors.toList());
     }

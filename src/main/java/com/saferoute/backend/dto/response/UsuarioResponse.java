@@ -6,7 +6,7 @@ import lombok.*;
 @NoArgsConstructor @AllArgsConstructor
 public class UsuarioResponse {
 
-    private Integer idusuario;
+    private Integer idUsuario;
     private String nombre;
     private String apellido;
     private String email;
